@@ -14,7 +14,7 @@ export const appConfig: ApplicationConfig = {
     {
       provide: TMDB_CONFIG,
       useValue:{
-        tmbdbApiKey: '73b2fc9fab947354d61cb3faa1a40405',
+        tmbdbApiKey: '', //use own APIKEY
       }
     },
   ],
