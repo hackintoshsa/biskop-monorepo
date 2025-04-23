@@ -1,0 +1,19 @@
+{
+  "name": "main",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/services/main/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:swc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/services/main",
+        "main": "libs/services/main/src/index.ts",
+        "tsConfig": "libs/services/main/tsconfig.lib.json",
+        "assets": ["libs/services/main/*.md"]
+      }
+    }
+  }
+}
