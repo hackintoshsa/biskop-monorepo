@@ -13,7 +13,7 @@ import {
 import { routes } from './app/app.routes';
 import { AppComponent } from './app/app.component';
 import { provideHttpClient } from '@angular/common/http';
-import { stateManagementConfig } from '../../../libs/state/state-management';
+import { stateManagementConfig } from '@biskop-monorepo/state-management';
 import { TMDB_CONFIG } from '@biskop-monorepo/main';
 
 
