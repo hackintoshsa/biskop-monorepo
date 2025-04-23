@@ -1,0 +1,19 @@
+{
+  "name": "state-management.ts",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/state/state-management.ts/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/state/state-management.ts",
+        "main": "libs/state/state-management.ts/src/index.ts",
+        "tsConfig": "libs/state/state-management.ts/tsconfig.lib.json",
+        "assets": ["libs/state/state-management.ts/*.md"]
+      }
+    }
+  }
+}
