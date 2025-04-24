@@ -1,0 +1,19 @@
+{
+  "name": "custom-pipe",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/utils/custom-pipe/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/utils/custom-pipe",
+        "main": "libs/utils/custom-pipe/src/index.ts",
+        "tsConfig": "libs/utils/custom-pipe/tsconfig.lib.json",
+        "assets": ["libs/utils/custom-pipe/*.md"]
+      }
+    }
+  }
+}
