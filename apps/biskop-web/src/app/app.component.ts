@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, Input, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { NxWelcomeComponent } from './nx-welcome.component';
 import { MainService } from '@biskop-monorepo/main';
@@ -14,6 +14,9 @@ export class AppComponent implements OnInit{
   title = 'biskop-web';
 
    movieService = inject(MainService);
+
+   @Input() username! : string;
+   @Input() age! : number;
 
   getData(){
     this.movieService.getPopularMovies(1).subscribe(value => {

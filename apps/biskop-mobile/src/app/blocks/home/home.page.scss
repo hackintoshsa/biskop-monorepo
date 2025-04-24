@@ -1,0 +1,131 @@
+:root{
+  --ion-toolbar-background:transparent;
+  --cardShadow: 0 4px 7px rgb(0 0 0 / 25%);
+  --background: transparent;
+  --ion-color-base: transparent !important;
+
+  --gap: 12px;
+  --gradient1: radial-gradient(164.75% 100% at 50% 0,
+    var(--shade1) 0,
+    var(--shade2) 48.73%);
+}
+ion-toolbar {
+  --ion-toolbar-background-color: transparent;
+  --ion-toolbar-text-color: white;
+}
+
+
+.transparent-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10; /* Ensure header is above the swiper */
+  background: transparent; /* Transparent background */
+}
+
+.transparent-header ion-toolbar {
+  --background: transparent; /* Transparent toolbar */
+  --color: white; /* White text for visibility */
+
+}
+.full-screen-swiper{
+  z-index: 1; /* Ensure swiper is below the header */
+}
+
+
+
+
+.container {
+  margin: auto;
+}
+
+.card-group{
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
+  min-width: 100%;
+}
+
+.card-group .card-item{
+  width: 378px;
+  height: 212px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--cardShadow);
+  transition: 300ms ease-in-out;
+  background: var(--gradient1);
+  margin: var(--gap);
+}
+
+.card-group .card-item-slider{
+  width: 226px;
+  height: 146px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--cardShadow);
+  transition: 300ms ease-in-out;
+  background: var(--gradient1);
+  margin: var(--gap);
+}
+
+.card-item img{
+  width: 100%;
+  height: 100%;
+  display: block;
+  transition: 300ms ease-in-out;
+  scale: 1.03;
+}
+
+img{
+  height: 100%;
+}
+
+
+//swiper-slide {
+//  text-align: center;
+//  font-size: 18px;
+//  background: #fff;
+//  height: calc((100% - 30px) / 2) !important;
+//  display: flex;
+//  justify-content: center;
+//  align-items: center;
+//}
+
+.hero-container{
+  position: relative;
+  filter: brightness(0.6);
+  //background: linear-gradient( 0deg, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 0.7) 30%, rgba(255, 255, 255, 0) 60% );
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 260px;
+}
+.hero-image{
+  width: 100%;
+  height: inherit;
+  object-fit: fill;
+  position: absolute;
+  z-index: -1;
+  filter: brightness(110%);
+  -webkit-filter: brightness(110%);
+}
+
+.hero-content{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+video, embed {
+  max-width: 100%;
+  max-height: 100%;
+}
+

@@ -1,0 +1,137 @@
+<ion-header [translucent]="true" class="transparent-header">
+  <ion-toolbar>
+    <ion-title class="ion-text-center">
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+  <ion-content [fullscreen]="true">
+  <swiper-container
+    class="full-screen-swiper"
+    #swiper
+    loop="true"
+    effect="coverflow"
+    pagination="true"
+    (swiperslidechange)="onSlideChange($event)"
+  >
+    <swiper-slide *ngFor="let movie of trendingMoviesResponse; let i=index">
+      <div class="hero-container">
+          <img class="hero-image" [src]="movie.poster_path | imageUrl" alt="Movie Poster">
+
+<!--        <img class="hero-image" [src]="movie.poster_path | imageUrl" alt="">-->
+<!--        -->
+<!--        <div *ngIf="showVideo && currentIndex === i" class="video-container">-->
+<!--          <embed-->
+<!--            [src]="videoUrl"-->
+<!--            type="application/x-shockwave-flash"-->
+<!--            width="375"-->
+<!--            height="260"-->
+<!--            frameborder="0"-->
+<!--          />-->
+<!--        </div>-->
+        <div collapse="condense">
+          <ion-title size="large" class="home-title">Home</ion-title>
+        </div>
+
+      </div>
+    </swiper-slide>
+  </swiper-container>
+
+
+
+
+
+  <div class="ion-padding container">
+    <div class="slider-container">
+      <ion-label class="sf-display-bold tw-text-xl">
+        Trending Movies
+        <ion-icon class="tw-relative tw-top-1" name="chevron-forward" ></ion-icon>
+      </ion-label>
+      <swiper-container
+        [spaceBetween]="15"
+        [slidesPerView]="1.5"
+        (slidechange)="swiperSlideChange($event)"
+      >
+        <swiper-slide *ngFor="let movie of trendingMoviesResponse; let i=index">
+          <div class="card-slider">
+            <div class="card-group tw-mt-4">
+              <div class="card-item-slider">
+                <img [src]="movie.backdrop_path | imageUrl" [alt]="movie.title">
+              </div>
+            </div>
+            <div class="movie-info" style="display: flex; align-items: center;">
+              <div class="tw-mr-3">
+                <p class="tw-text-gray-400 tw-text-4xl sf-text-bold">{{i+1}}</p>
+              </div>
+              <div >
+                <p class="sf-text-light tw-text-xs tw-flex">{{movie.title}}</p>
+                <p class="tw-text-gray-400 tw-text-xs tw-flex">{{movie.release_date | date :'YYYY'}} - {{ getGenreById(movie.genre_ids) }}</p>
+              </div>
+            </div>
+          </div>
+        </swiper-slide>
+      </swiper-container>
+    </div>
+    <div class="slider-container tw-mt-5">
+      <ion-label class="sf-display-bold tw-text-xl">
+        Trending Series
+        <ion-icon class="tw-relative tw-top-1" name="chevron-forward" ></ion-icon>
+      </ion-label>
+      <swiper-container
+        [spaceBetween]="15"
+        [slidesPerView]="1.5"
+        [loop]="true"
+        (slidechange)="swiperSlideChange($event)"
+      >
+        <swiper-slide *ngFor="let tv of trendingTvShowResponse; let i=index">
+          <div class="card-slider">
+            <div class="card-group tw-mt-4">
+              <div class="card-item-slider">
+                <img [src]="tv.backdrop_path | imageUrl" [alt]="tv.title">
+              </div>
+            </div>
+            <div class="movie-info" style="display: flex; align-items: center;">
+              <div class="tw-mr-3">
+                <p class="tw-text-gray-400 tw-text-4xl sf-text-bold">{{i+1}}</p>
+              </div>
+              <div >
+                <p class="sf-text-light tw-text-xs tw-flex">{{tv.name}}</p>
+                <p class="tw-text-gray-400 tw-text-xs tw-flex">{{tv.first_air_date | date :'YYYY'}} - {{ getGenreById(tv.genre_ids) }}</p>
+              </div>
+            </div>
+          </div>
+        </swiper-slide>
+      </swiper-container>
+    </div>
+  </div>
+
+
+<!--  <div class="tw-mb-8 tw-mt-20">-->
+<!--    <ion-label class="sf-display-bold tw-text-xl">-->
+<!--      Trending Movies-->
+<!--      <ion-icon class="tw-relative tw-top-1" name="chevron-forward" ></ion-icon>-->
+<!--    </ion-label>-->
+
+<!--    <div class="card-slider">-->
+<!--      <div class="card-group tw-mt-4">-->
+<!--        <div class="card-item">-->
+<!--          <img src="assets/756x4215.jpg" alt="">-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="movie-info" style="display: flex; align-items: center;">-->
+<!--        <div class="tw-mr-3">-->
+<!--          <p class="tw-text-gray-400 tw-text-4xl sf-text-bold">1</p>-->
+<!--        </div>-->
+<!--        <div >-->
+<!--          <p class="sf-text-light tw-text-xs">Gladiator</p>-->
+<!--          <p class="tw-text-gray-400 tw-text-xs">2024 - Action</p>-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--    </div>-->
+
+<!--  </div>-->
+
+</ion-content>

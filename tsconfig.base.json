@@ -16,9 +16,12 @@
     "baseUrl": ".",
     "paths": {
       "@biskop-monorepo/auth": ["libs/services/auth/src/index.ts"],
+      "@biskop-monorepo/custom-pipe": ["libs/utils/custom-pipe/src/index.ts"],
       "@biskop-monorepo/main": ["libs/services/main/src/index.ts"],
-      "@biskop-monorepo/state-management": ["libs/state/state-management/src/index.ts"],
-      "@biskop-monorepo/utils": ["libs/utils/src/index.ts"],
+      "@biskop-monorepo/state-management": [
+        "libs/state/state-management/src/index.ts"
+      ],
+      "@biskop-monorepo/util": ["libs/utils/util/src/index.ts"],
       "@env/*": ["apps/biskop-web/src/environments/*"]
     }
   },
