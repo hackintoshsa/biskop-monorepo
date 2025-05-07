@@ -31,13 +31,21 @@
 <!--            frameborder="0"-->
 <!--          />-->
 <!--        </div>-->
-        <div collapse="condense">
-          <ion-title size="large" class="home-title">Home</ion-title>
-        </div>
+<!--        <div collapse="condense">-->
+<!--          <ion-title size="large" class="home-title">Home</ion-title>-->
+<!--        </div>-->
 
       </div>
     </swiper-slide>
   </swiper-container>
+
+    <ion-action-sheet
+      trigger="open-action-sheet"
+      header="Actions"
+      mode="ios"
+      [buttons]="actionSheetButtons">
+
+    </ion-action-sheet>
 
 
 
@@ -55,7 +63,7 @@
         (slidechange)="swiperSlideChange($event)"
       >
         <swiper-slide *ngFor="let movie of trendingMoviesResponse; let i=index">
-          <div class="card-slider">
+          <div class="card-slider" (click)="presentActionSheet(movie)">
             <div class="card-group tw-mt-4">
               <div class="card-item-slider">
                 <img [src]="movie.backdrop_path | imageUrl" [alt]="movie.title">
@@ -106,6 +114,27 @@
       </swiper-container>
     </div>
   </div>
+
+    <ion-button id="open-modal" expand="block">Open</ion-button>
+
+    <ion-modal trigger="open-modal">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar>
+            <ion-buttons slot="start">
+              <ion-button >Cancel</ion-button>
+            </ion-buttons>
+            <ion-title>Welcome</ion-title>
+            <ion-buttons slot="end">
+              <ion-button  [strong]="true">Confirm</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content class="ion-padding">
+
+        </ion-content>
+      </ng-template>
+    </ion-modal>
 
 
 <!--  <div class="tw-mb-8 tw-mt-20">-->
